@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amrit Prasad - Portfolio</title>
+    <meta name="description" content="Developer portfolio of Amrit Prasad">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fa-solid fa-terminal"></i>
+                <span class="logo-text">Amrit Prasad</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#overview" class="active">Overview</a></li>
+                    <li><a href="#repositories">Repositories</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="icon-btn" aria-label="Notifications"><i class="fa-regular fa-bell"></i></button>
+                <div class="avatar-small">
+                    <img src="https://ui-avatars.com/api/?name=Amrit+Prasad&background=random" alt="Profile" />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <aside class="profile-sidebar">
+            <div class="profile-avatar-large">
+                <img src="https://ui-avatars.com/api/?name=Amrit+Prasad&background=random&size=296" alt="Amrit Prasad">
+            </div>
+            <h1 class="vcard-names">
+                <span class="p-name">Amrit Prasad</span>
+                <span class="p-nickname">amrit94</span>
+            </h1>
+            <div class="p-note user-profile-bio">
+                <div>Full Stack Developer | Building scalable web applications.</div>
+            </div>
+            <button class="btn btn-block">Edit profile</button>
+            <div class="profile-details">
+                <div class="detail-item"><i class="fa-solid fa-user-group"></i> <span><b>15</b> followers</span> ·
+                    <span><b>20</b> following</span>
+                </div>
+                <div class="detail-item"><i class="fa-regular fa-building"></i> <span>Freelance</span></div>
+                <div class="detail-item"><i class="fa-solid fa-location-dot"></i> <span>India</span></div>
+                <div class="detail-item"><i class="fa-regular fa-envelope"></i> <a
+                        href="mailto:contact@example.com">contact@example.com</a></div>
+                <div class="detail-item"><i class="fa-solid fa-link"></i> <a href="#">amritprasad.dev</a></div>
+                <div class="detail-item"><i class="fa-brands fa-linkedin"></i> <a href="#">amritpra94</a></div>
+            </div>
+        </aside>
+
+        <div class="content-area">
+            <div class="pinned-items-header">
+                <h2>Pinned</h2>
+                <a href="#" class="customize-link">Customize your pins</a>
+            </div>
+            <div class="pinned-grid">
+                <!-- Pinned Item 1 -->
+                <div class="pinned-item-card">
+                    <div class="card-header">
+                        <div class="repo-title">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                            <a href="#">portfolio-website</a>
+                            <span class="badge">Public</span>
+                        </div>
+                        <span class="grab-handle"><i class="fa-solid fa-grip-vertical"></i></span>
+                    </div>
+                    <p class="repo-desc">My personal portfolio website built with HTML, CSS, and JS.</p>
+                    <div class="card-footer">
+                        <span class="lang-color" style="background-color: #e34c26;"></span>
+                        <span class="lang-name">HTML</span>
+                        <span class="star-count"><i class="fa-regular fa-star"></i> 5</span>
+                    </div>
+                </div>
+
+                <!-- Pinned Item 2 -->
+                <div class="pinned-item-card">
+                    <div class="card-header">
+                        <div class="repo-title">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                            <a href="#">ecommerce-api</a>
+                            <span class="badge">Public</span>
+                        </div>
+                        <span class="grab-handle"><i class="fa-solid fa-grip-vertical"></i></span>
+                    </div>
+                    <p class="repo-desc">RESTful API for an ecommerce platform using Node.js and Express.</p>
+                    <div class="card-footer">
+                        <span class="lang-color" style="background-color: #f1e05a;"></span>
+                        <span class="lang-name">JavaScript</span>
+                        <span class="star-count"><i class="fa-regular fa-star"></i> 12</span>
+                    </div>
+                </div>
+
+                <!-- Pinned Item 3 -->
+                <div class="pinned-item-card">
+                    <div class="card-header">
+                        <div class="repo-title">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                            <a href="#">react-dashboard</a>
+                            <span class="badge">Public</span>
+                        </div>
+                        <span class="grab-handle"><i class="fa-solid fa-grip-vertical"></i></span>
+                    </div>
+                    <p class="repo-desc">Admin dashboard template built with React and Tailwind CSS.</p>
+                    <div class="card-footer">
+                        <span class="lang-color" style="background-color: #61dafb;"></span>
+                        <span class="lang-name">React</span>
+                        <span class="star-count"><i class="fa-regular fa-star"></i> 8</span>
+                    </div>
+                </div>
+
+                <!-- Pinned Item 4 -->
+                <div class="pinned-item-card">
+                    <div class="card-header">
+                        <div class="repo-title">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                            <a href="#">python-cli-tool</a>
+                            <span class="badge">Public</span>
+                        </div>
+                        <span class="grab-handle"><i class="fa-solid fa-grip-vertical"></i></span>
+                    </div>
+                    <p class="repo-desc">A command line interface tool for automating daily tasks.</p>
+                    <div class="card-footer">
+                        <span class="lang-color" style="background-color: #3572A5;"></span>
+                        <span class="lang-name">Python</span>
+                        <span class="star-count"><i class="fa-regular fa-star"></i> 3</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="readme-section">
+                <div class="readme-header">
+                    <span class="user-id">amrit94</span> / <span class="repo-name">README.md</span>
+                </div>
+                <div class="readme-content">
+                    <h3>Hi there 👋</h3>
+                    <p>I'm Amrit Prasad, a Full Stack Developer passionate about building scalable web applications and
+                        open source software.</p>
+
+                    <h4>ðŸ”§ Languages and Tools</h4>
+                    <div class="skills-grid">
+                        <div class="skill-item"><i class="fa-brands fa-js"></i> JavaScript</div>
+                        <div class="skill-item"><i class="fa-brands fa-react"></i> React</div>
+                        <div class="skill-item"><i class="fa-brands fa-node"></i> Node.js</div>
+                        <div class="skill-item"><i class="fa-brands fa-python"></i> Python</div>
+                        <div class="skill-item"><i class="fa-brands fa-html5"></i> HTML5</div>
+                        <div class="skill-item"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+                        <div class="skill-item"><i class="fa-brands fa-docker"></i> Docker</div>
+                        <div class="skill-item"><i class="fa-brands fa-git-alt"></i> Git</div>
+                    </div>
+
+                    <h4>ðŸ“ˆ GitHub Stats</h4>
+                    <p>
+                        <img src="https://github-readme-stats.vercel.app/api?username=amrit94&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117"
+                            alt="GitHub Stats" style="max-width: 100%;">
+                    </p>
+                </div>
+            </div>
+
+            <div class="contributions-section">
+                <h2>1,234 contributions in the last year</h2>
+                <div class="contribution-graph-placeholder">
+                    <!-- Placeholder for contribution graph visual -->
+                    <div class="graph-grid">
+                        <!-- Generating a mock grid visually with CSS -->
+                        <div class="graph-row"></div>
+                        <div class="graph-row"></div>
+                        <div class="graph-row"></div>
+                        <div class="graph-row"></div>
+                        <div class="graph-row"></div>
+                        <div class="graph-row"></div>
+                        <div class="graph-row"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer container">
+        <div class="footer-logo">
+            <i class="fa-brands fa-github fa-2x"></i>
+        </div>
+        <div class="footer-links">
+            <p>&copy; 2025 Amrit Prasad. All rights reserved.</p>
+            <ul>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Security</a></li>
+                <li><a href="#">Status</a></li>
+                <li><a href="#">Docs</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
