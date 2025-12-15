@@ -32,7 +32,8 @@
             <div class="header-actions">
                 <button class="icon-btn" aria-label="Notifications"><i class="fa-regular fa-bell"></i></button>
                 <div class="avatar-small">
-                    <img src="https://ui-avatars.com/api/?name=Amrit+Prasad&background=random" alt="Profile" />
+                    <img src="https://ui-avatars.com/api/?name=Amrit+Prasad&background=random" alt="Profile"
+                        id="nav-profile-avatar" />
                 </div>
             </div>
         </div>
@@ -41,108 +42,35 @@
     <main class="container main-content">
         <aside class="profile-sidebar">
             <div class="profile-avatar-large">
-                <img src="https://ui-avatars.com/api/?name=Amrit+Prasad&background=random&size=296" alt="Amrit Prasad">
+                <img src="https://ui-avatars.com/api/?name=Amrit+Prasad&background=random&size=296" alt="Amrit Prasad"
+                    id="profile-avatar">
             </div>
             <h1 class="vcard-names">
-                <span class="p-name">Amrit Prasad</span>
-                <span class="p-nickname">amrit94</span>
+                <span class="p-name" id="profile-name">Amrit Prasad</span>
+                <span class="p-nickname" id="profile-username">amrit94</span>
             </h1>
-            <div class="p-note user-profile-bio">
+            <div class="p-note user-profile-bio" id="profile-bio">
                 <div>Full Stack Developer | Building scalable web applications.</div>
             </div>
-            <button class="btn btn-block">Edit profile</button>
+            <!-- <button class="btn btn-block">Edit profile</button> -->
             <div class="profile-details">
-                <div class="detail-item"><i class="fa-solid fa-user-group"></i> <span><b>15</b> followers</span> ·
-                    <span><b>20</b> following</span>
+                <div class="detail-item"><i class="fa-solid fa-user-group"></i> <span id="profile-followers"><b>15</b>
+                        followers</span> ·
+                    <span id="profile-following"><b>20</b> following</span>
                 </div>
-                <div class="detail-item"><i class="fa-regular fa-building"></i> <span>Freelance</span></div>
-                <div class="detail-item"><i class="fa-solid fa-location-dot"></i> <span>India</span></div>
+                <div class="detail-item" id="profile-company-wrapper" style="display:none;"><i
+                        class="fa-regular fa-building"></i> <span id="profile-company"></span></div>
+                <div class="detail-item"><i class="fa-solid fa-location-dot"></i> <span
+                        id="profile-location">India</span></div>
                 <div class="detail-item"><i class="fa-regular fa-envelope"></i> <a
                         href="mailto:contact@example.com">contact@example.com</a></div>
-                <div class="detail-item"><i class="fa-solid fa-link"></i> <a href="#">amritprasad.dev</a></div>
+                <div class="detail-item"><i class="fa-solid fa-link"></i> <a href="#"
+                        id="profile-blog">amritprasad.dev</a></div>
                 <div class="detail-item"><i class="fa-brands fa-linkedin"></i> <a href="#">amritpra94</a></div>
             </div>
         </aside>
 
         <div class="content-area">
-            <div class="pinned-items-header">
-                <h2>Pinned</h2>
-                <a href="#" class="customize-link">Customize your pins</a>
-            </div>
-            <div class="pinned-grid">
-                <!-- Pinned Item 1 -->
-                <div class="pinned-item-card">
-                    <div class="card-header">
-                        <div class="repo-title">
-                            <i class="fa-solid fa-book-bookmark"></i>
-                            <a href="#">portfolio-website</a>
-                            <span class="badge">Public</span>
-                        </div>
-                        <span class="grab-handle"><i class="fa-solid fa-grip-vertical"></i></span>
-                    </div>
-                    <p class="repo-desc">My personal portfolio website built with HTML, CSS, and JS.</p>
-                    <div class="card-footer">
-                        <span class="lang-color" style="background-color: #e34c26;"></span>
-                        <span class="lang-name">HTML</span>
-                        <span class="star-count"><i class="fa-regular fa-star"></i> 5</span>
-                    </div>
-                </div>
-
-                <!-- Pinned Item 2 -->
-                <div class="pinned-item-card">
-                    <div class="card-header">
-                        <div class="repo-title">
-                            <i class="fa-solid fa-book-bookmark"></i>
-                            <a href="#">ecommerce-api</a>
-                            <span class="badge">Public</span>
-                        </div>
-                        <span class="grab-handle"><i class="fa-solid fa-grip-vertical"></i></span>
-                    </div>
-                    <p class="repo-desc">RESTful API for an ecommerce platform using Node.js and Express.</p>
-                    <div class="card-footer">
-                        <span class="lang-color" style="background-color: #f1e05a;"></span>
-                        <span class="lang-name">JavaScript</span>
-                        <span class="star-count"><i class="fa-regular fa-star"></i> 12</span>
-                    </div>
-                </div>
-
-                <!-- Pinned Item 3 -->
-                <div class="pinned-item-card">
-                    <div class="card-header">
-                        <div class="repo-title">
-                            <i class="fa-solid fa-book-bookmark"></i>
-                            <a href="#">react-dashboard</a>
-                            <span class="badge">Public</span>
-                        </div>
-                        <span class="grab-handle"><i class="fa-solid fa-grip-vertical"></i></span>
-                    </div>
-                    <p class="repo-desc">Admin dashboard template built with React and Tailwind CSS.</p>
-                    <div class="card-footer">
-                        <span class="lang-color" style="background-color: #61dafb;"></span>
-                        <span class="lang-name">React</span>
-                        <span class="star-count"><i class="fa-regular fa-star"></i> 8</span>
-                    </div>
-                </div>
-
-                <!-- Pinned Item 4 -->
-                <div class="pinned-item-card">
-                    <div class="card-header">
-                        <div class="repo-title">
-                            <i class="fa-solid fa-book-bookmark"></i>
-                            <a href="#">python-cli-tool</a>
-                            <span class="badge">Public</span>
-                        </div>
-                        <span class="grab-handle"><i class="fa-solid fa-grip-vertical"></i></span>
-                    </div>
-                    <p class="repo-desc">A command line interface tool for automating daily tasks.</p>
-                    <div class="card-footer">
-                        <span class="lang-color" style="background-color: #3572A5;"></span>
-                        <span class="lang-name">Python</span>
-                        <span class="star-count"><i class="fa-regular fa-star"></i> 3</span>
-                    </div>
-                </div>
-            </div>
-
             <div class="readme-section">
                 <div class="readme-header">
                     <span class="user-id">amrit94</span> / <span class="repo-name">README.md</span>
@@ -152,59 +80,155 @@
                     <p>I'm Amrit Prasad, a Full Stack Developer passionate about building scalable web applications and
                         open source software.</p>
 
-                    <h4>ðŸ”§ Languages and Tools</h4>
-                    <div class="skills-grid">
-                        <div class="skill-item"><i class="fa-brands fa-js"></i> JavaScript</div>
-                        <div class="skill-item"><i class="fa-brands fa-react"></i> React</div>
-                        <div class="skill-item"><i class="fa-brands fa-node"></i> Node.js</div>
-                        <div class="skill-item"><i class="fa-brands fa-python"></i> Python</div>
-                        <div class="skill-item"><i class="fa-brands fa-html5"></i> HTML5</div>
-                        <div class="skill-item"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
-                        <div class="skill-item"><i class="fa-brands fa-docker"></i> Docker</div>
-                        <div class="skill-item"><i class="fa-brands fa-git-alt"></i> Git</div>
+                    <h4 class="section-title">Technical Skills</h4>
+                    <div class="skills-grid-new">
+                        <div class="skill-card">
+                            <i class="fa-brands fa-python skill-icon" style="color: #3776AB;"></i>
+                            <span class="skill-name">Python</span>
+                            <div class="star-rating" aria-label="5 stars"><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fa-solid fa-layer-group skill-icon" style="color: #092E20;"></i>
+                            <span class="skill-name">Django</span>
+                            <div class="star-rating" aria-label="4.5 stars"><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fa-solid fa-server skill-icon" style="color: #a30f1d;"></i>
+                            <span class="skill-name">DRF</span>
+                            <div class="star-rating" aria-label="4.5 stars"><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fa-solid fa-database skill-icon" style="color: #336791;"></i>
+                            <span class="skill-name">PostgreSQL</span>
+                            <div class="star-rating" aria-label="4 stars"><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fa-solid fa-memory skill-icon" style="color: #DC382D;"></i>
+                            <span class="skill-name">Redis/Celery</span>
+                            <div class="star-rating" aria-label="4 stars"><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fa-brands fa-docker skill-icon" style="color: #2496ED;"></i>
+                            <span class="skill-name">Docker</span>
+                            <div class="star-rating" aria-label="3.5 stars"><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i></div>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fa-brands fa-aws skill-icon" style="color: #FF9900;"></i>
+                            <span class="skill-name">AWS</span>
+                            <div class="star-rating" aria-label="3.5 stars"><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i></div>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fa-brands fa-linux skill-icon" style="color: #FCC624;"></i>
+                            <span class="skill-name">Linux</span>
+                            <div class="star-rating" aria-label="4 stars"><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+                        </div>
                     </div>
 
-                    <h4>ðŸ“ˆ GitHub Stats</h4>
-                    <p>
-                        <img src="https://github-readme-stats.vercel.app/api?username=amrit94&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117"
-                            alt="GitHub Stats" style="max-width: 100%;">
-                    </p>
+                    <h4 class="section-title">Work Experience</h4>
+                    <div class="experience-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h5 class="job-title">Software Developer</h5>
+                                <div class="job-meta">
+                                    <span class="company">Rapawalk</span>
+                                    <span class="duration">Apr 2021 - Present</span>
+                                </div>
+                                <ul class="job-achievements">
+                                    <li>Developing and Maintaining Rapawalk Website</li>
+                                    <li>Adding features like: Bundle Shipment, Multiple warehouses</li>
+                                    <li>Integrate: Shiprocket, Shiprocket Engage</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h5 class="job-title">Software Developer</h5>
+                                <div class="job-meta">
+                                    <span class="company">Instamojo</span>
+                                    <span class="duration">Sept 2019 - Mar 2020</span>
+                                </div>
+                                <ul class="job-achievements">
+                                    <li>Worked on Mojo Developer Program to create small apps. Each apps can be
+                                        subscribed and their features can be used by the client.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h5 class="job-title">Data Engineer</h5>
+                                <div class="job-meta">
+                                    <span class="company">DateWeave</span>
+                                    <span class="duration"> Dec 2018 - Aug 2019</span>
+                                </div>
+                                <ul class="job-achievements">
+                                    <li>Crawl publicly available data from various websites(like Amazon, Flipkart, MMT
+                                        etc) for various clients (like ITC, OYO etc)</li>
+                                    <li>Process all the data and provide it to client in their required format.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="section-title">Research Papers</h4>
+                    <div class="research-list">
+                        <div class="research-card">
+                            <h5 class="paper-title"><a href="#">Optimizing Neural Network Architectures for Edge
+                                    Devices</a></h5>
+                            <p class="paper-abstract">This paper explores novel pruning techniques to reduce the
+                                computational constraints of deploying deep learning models on low-power edge devices
+                                without significant loss in accuracy.</p>
+                        </div>
+                        <div class="research-card">
+                            <h5 class="paper-title"><a href="#">Scalable Microservices Patterns in Cloud-Native
+                                    Applications</a></h5>
+                            <p class="paper-abstract">A comparative study of various inter-service communication
+                                patterns (synchronous vs. asynchronous) and their impact on system scalability and fault
+                                tolerance in cloud setups.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <div class="pinned-items-header">
+                <h2>Pinned</h2>
+            </div>
+            <div class="pinned-grid" id="pinned-repos">
+                <!-- Pinned items will be loaded dynamically -->
+                <p style="color: var(--color-text-secondary);">Loading pinned repositories...</p>
+            </div>
+
             <div class="contributions-section">
-                <h2>1,234 contributions in the last year</h2>
-                <div class="contribution-graph-placeholder">
-                    <!-- Placeholder for contribution graph visual -->
-                    <div class="graph-grid">
-                        <!-- Generating a mock grid visually with CSS -->
-                        <div class="graph-row"></div>
-                        <div class="graph-row"></div>
-                        <div class="graph-row"></div>
-                        <div class="graph-row"></div>
-                        <div class="graph-row"></div>
-                        <div class="graph-row"></div>
-                        <div class="graph-row"></div>
-                    </div>
+                <h2>Contributions in the last year</h2>
+                <div class="contribution-graph-container">
+                    <img src="https://ghchart.rshah.org/3fb950/amrit94" alt="Amrit Prasad's Github chart"
+                        style="width: 100%; height: auto;" />
                 </div>
             </div>
         </div>
     </main>
 
     <footer class="site-footer container">
-        <div class="footer-logo">
-            <i class="fa-brands fa-github fa-2x"></i>
-        </div>
         <div class="footer-links">
             <p>&copy; 2025 Amrit Prasad. All rights reserved.</p>
-            <ul>
-                <li><a href="#">Terms</a></li>
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">Security</a></li>
-                <li><a href="#">Status</a></li>
-                <li><a href="#">Docs</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
         </div>
     </footer>
 

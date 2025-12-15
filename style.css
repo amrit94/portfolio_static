@@ -311,19 +311,23 @@ ul {
     margin-bottom: 8px;
 }
 
-.contribution-graph-placeholder {
+.contribution-graph-container {
     border: 1px solid var(--color-border-default);
     border-radius: 6px;
-    padding: 16px;
-    min-height: 100px;
+    padding: 24px;
+    background-color: var(--color-bg-default);
+    /* Match main bg or use subtle if preferred */
     display: flex;
-    align-items: center;
     justify-content: center;
-    background: repeating-linear-gradient(45deg,
-            var(--color-bg-subtle),
-            var(--color-bg-subtle) 10px,
-            var(--color-bg-default) 10px,
-            var(--color-bg-default) 20px);
+    overflow-x: auto;
+    align-items: center;
+}
+
+.contribution-graph-container img {
+    max-width: 100%;
+    min-width: 600px;
+    /* Ensure it doesn't get too squashed */
+    height: auto;
 }
 
 /* Footer */
@@ -490,4 +494,210 @@ ul {
 .readme-content img {
     max-width: 100%;
     height: auto;
+}
+
+/* Skills Grid Redesign */
+.skills-grid-new {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.skill-card {
+    background-color: var(--color-bg-subtle);
+    border: 1px solid var(--color-border-default);
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.skill-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-accent-fg);
+}
+
+.skill-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.skill-card .skill-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--color-text-primary);
+}
+
+.skill-card .star-rating {
+    font-size: 12px;
+}
+
+/* Experience Timeline Redesign */
+.experience-timeline {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 32px;
+}
+
+/* The vertical line */
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border-default);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 32px;
+    padding: 20px;
+    background-color: var(--color-bg-subtle);
+    border: 1px solid var(--color-border-default);
+    border-radius: 8px;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.timeline-item:hover {
+    transform: translateX(4px);
+    border-color: var(--color-accent-fg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* The dot on the timeline */
+.timeline-marker {
+    position: absolute;
+    left: -36px;
+    /* Adjust to center on the line (30px padding + 6px to center of 12px dot) */
+    top: 24px;
+    /* Align with the top specific to the card padding */
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--color-bg-default);
+    border: 3px solid var(--color-accent-fg);
+    z-index: 1;
+    transition: transform 0.2s;
+}
+
+.timeline-item:hover .timeline-marker {
+    transform: scale(1.2);
+    background-color: var(--color-accent-fg);
+}
+
+.timeline-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.job-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-accent-fg);
+    margin: 0;
+}
+
+.job-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-border-muted);
+    margin-bottom: 12px;
+}
+
+.job-meta .company {
+    font-weight: 600;
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.job-meta .company i {
+    color: var(--color-text-secondary);
+}
+
+.job-meta .duration {
+    background-color: var(--color-bg-default);
+    padding: 2px 8px;
+    border-radius: 12px;
+    border: 1px solid var(--color-border-muted);
+    font-size: 12px;
+}
+
+.job-achievements {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: var(--color-text-primary);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.job-achievements li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+}
+
+.job-achievements li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-fg);
+}
+
+.job-achievements li:last-child {
+    margin-bottom: 0;
+}
+
+/* Research Section */
+.research-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.research-card {
+    border: 1px solid var(--color-border-default);
+    border-radius: 6px;
+    padding: 16px;
+    background-color: var(--color-bg-subtle);
+}
+
+.paper-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.paper-title a {
+    color: var(--color-accent-fg);
+}
+
+.paper-abstract {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+.section-title {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--color-border-muted);
+    padding-bottom: 8px;
 }
