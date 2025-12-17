@@ -305,7 +305,7 @@ ul {
 }
 
 
-.contributions-section h2 {
+.github-stats-section h2 {
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 8px;
@@ -316,18 +316,50 @@ ul {
     border-radius: 6px;
     padding: 24px;
     background-color: var(--color-bg-default);
-    /* Match main bg or use subtle if preferred */
     display: flex;
     justify-content: center;
-    overflow-x: auto;
+    flex-wrap: wrap;
     align-items: center;
+    margin-bottom: 16px;
 }
 
 .contribution-graph-container img {
-    max-width: 100%;
-    min-width: 600px;
-    /* Ensure it doesn't get too squashed */
     height: auto;
+}
+
+.gh-chart {
+    flex: 1 1 600px;
+    min-width: 300px;
+    max-width: 100%;
+}
+
+.gh-streak {
+    flex: 0 1 auto;
+    max-width: 100%;
+}
+
+/* .streak-section h2 removed as merged */
+
+.stats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    /* Center them on mobile/desktop */
+}
+
+.stats-grid img {
+    height: auto;
+    max-width: 100%;
+    border-radius: 6px;
+    border: 1px solid var(--color-border-default);
+}
+
+.gh-stats-card,
+.gh-streak-card {
+    flex: 1 1 400px;
+    /* Allow them to grow but wrap if needed */
+    min-width: 300px;
 }
 
 /* Footer */
@@ -361,6 +393,21 @@ ul {
     gap: 16px;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+/* Mobile Optimization for Timeline */
+@media (max-width: 767px) {
+    .experience-timeline {
+        padding-left: 0;
+    }
+
+    .experience-timeline::before {
+        display: none;
+    }
+
+    .timeline-marker {
+        display: none;
+    }
 }
 
 /* Responsive - Tablet and Desktop */
@@ -499,7 +546,7 @@ ul {
 /* Skills Grid Redesign */
 .skills-grid-new {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 16px;
     margin-bottom: 32px;
 }
@@ -540,7 +587,6 @@ ul {
 /* Experience Timeline Redesign */
 .experience-timeline {
     position: relative;
-    padding-left: 30px;
     margin-bottom: 32px;
 }
 
@@ -734,6 +780,32 @@ ul {
     color: var(--color-text-secondary);
     line-height: 1.5;
     margin-bottom: 12px;
+}
+
+.paper-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.paper-highlights li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+}
+
+.paper-highlights li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-fg);
+}
+
+.paper-highlights li:last-child {
+    margin-bottom: 0;
 }
 
 .paper-tags {
