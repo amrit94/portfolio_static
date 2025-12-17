@@ -602,7 +602,7 @@ ul {
 .job-title {
     font-size: 18px;
     font-weight: 600;
-    color: var(--color-accent-fg);
+    color: var(--color-text-primary);
     margin: 0;
 }
 
@@ -663,6 +663,23 @@ ul {
     margin-bottom: 0;
 }
 
+.job-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.tech-tag {
+    background-color: var(--color-bg-default);
+    border: 1px solid var(--color-border-muted);
+    border-radius: 12px;
+    padding: 2px 10px;
+    font-size: 12px;
+    color: var(--color-accent-fg);
+    font-weight: 500;
+}
+
 /* Research Section */
 .research-list {
     display: flex;
@@ -677,10 +694,35 @@ ul {
     background-color: var(--color-bg-subtle);
 }
 
+
+.paper-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
 .paper-title {
     font-size: 16px;
     font-weight: 600;
+    margin-bottom: 0;
+    /* Removing bottom margin as it's handled by header */
+}
+
+.paper-year {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border-default);
+    padding: 2px 6px;
+    border-radius: 12px;
+    background-color: var(--color-bg-default);
+}
+
+.paper-publication {
+    font-size: 13px;
+    color: var(--color-text-secondary);
     margin-bottom: 8px;
+    font-style: italic;
 }
 
 .paper-title a {
@@ -691,6 +733,37 @@ ul {
     font-size: 14px;
     color: var(--color-text-secondary);
     line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.paper-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.paper-tags .tag {
+    font-size: 12px;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-default);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--color-border-muted);
+}
+
+.view-paper-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--color-accent-fg);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.view-paper-btn:hover {
+    text-decoration: underline;
 }
 
 .section-title {

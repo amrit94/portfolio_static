@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             // Update Text Content
             updateElementText('profile-name', data.name);
-            updateElementText('profile-username', data.login);
+            // updateElementText('profile-username', data.login);
             updateElementText('profile-bio', data.bio);
             updateElementText('profile-location', data.location);
 
