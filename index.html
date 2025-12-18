@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amrit Prasad - Portfolio</title>
-    <meta name="description" content="Developer portfolio of Amrit Prasad">
+    <meta name="description"
+        content="Developer portfolio template of Amrit Prasad. Showcasing full-stack development projects, research papers, and technical skills.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,19 +18,22 @@
 <body>
     <header class="site-header">
         <div class="container header-container">
-            <div class="logo">
+            <a href="#" class="logo" aria-label="Back to Top">
                 <i class="fa-solid fa-terminal"></i>
                 <span class="logo-text">Amrit Prasad</span>
-            </div>
+            </a>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#overview" class="active">Overview</a></li>
-                    <li><a href="#repositories">Repositories</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#experience" class="active">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#papers">Papers</a></li>
+                    <li><a href="#stats">Stats</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
+                <button class="icon-btn" id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
                 <div class="avatar-small">
                     <a href="https://github.com/amrit94" target="_blank">
                         <img src="https://ui-avatars.com/api/?name=Amrit+Prasad&background=random" alt="Profile"
@@ -83,7 +87,7 @@
                         applications. Expert in Python/Django and React, with a strong background in data engineering
                         and backend systems. Proven track record at Rapawalk and Instamojo, delivering key features like
                         warehouse integrations and developer platform apps.</p>
-                    <h4 class="section-title">Work Experience</h4>
+                    <h4 class="section-title" id="experience">Work Experience</h4>
                     <div class="experience-timeline">
                         <div class="timeline-item">
                             <div class="timeline-marker"></div>
@@ -148,7 +152,7 @@
                     </div>
 
 
-                    <h4 class="section-title">Technical Skills</h4>
+                    <h4 class="section-title" id="skills">Technical Skills</h4>
                     <div class="skills-grid-new">
                         <div class="skill-card">
                             <i class="fa-brands fa-python skill-icon" style="color: #3776AB;"></i>
@@ -209,7 +213,7 @@
                     </div>
 
 
-                    <h4 class="section-title">Research Papers</h4>
+                    <h4 class="section-title" id="papers">Research Papers</h4>
                     <div class="research-list">
                         <div class="research-card">
                             <div class="paper-header">
@@ -277,7 +281,7 @@
                 <p style="color: var(--color-text-secondary);">Loading pinned repositories...</p>
             </div>
 
-            <div class="github-stats-section">
+            <div class="github-stats-section" id="stats">
                 <h2>GitHub Statistics</h2>
                 <div class="contribution-graph-container">
                     <img src="https://ghchart.rshah.org/3fb950/amrit94" alt="Amrit Prasad's Github chart"
@@ -298,6 +302,19 @@
             <p>&copy; 2025 Amrit Prasad. All rights reserved.</p>
         </div>
     </footer>
+
+    <div class="sticky-contact-sidebar">
+        <a href="tel:+917002047872" class="contact-btn call-btn" aria-label="Call Me">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+        <a href="https://wa.me/917002047872" target="_blank" class="contact-btn whatsapp-btn" aria-label="WhatsApp Me">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <button id="back-to-top" class="icon-btn back-to-top" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>

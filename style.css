@@ -21,6 +21,26 @@
     --font-family-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
 }
 
+[data-theme="light"] {
+    --color-bg-default: #ffffff;
+    --color-bg-subtle: #f6f8fa;
+    --color-bg-overlay: #ffffff;
+    --color-border-default: #d0d7de;
+    --color-border-muted: #d8dee4;
+
+    --color-text-primary: #24292f;
+    --color-text-secondary: #57606a;
+    --color-text-link: #0969da;
+
+    --color-btn-bg: #f6f8fa;
+    --color-btn-hover: #f3f4f6;
+    --color-btn-text: #24292f;
+    --color-btn-border: #d0d7de;
+
+    --color-accent-fg: #0969da;
+    --color-success-fg: #1a7f37;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -78,6 +98,7 @@ ul {
     gap: 8px;
     font-size: 32px;
     color: var(--color-text-primary);
+    text-decoration: none;
 }
 
 .logo-text {
@@ -305,10 +326,12 @@ ul {
 }
 
 
+/* Github Stats Title */
 .github-stats-section h2 {
     font-size: 16px;
-    font-weight: 400;
-    margin-bottom: 8px;
+    font-weight: 600;
+    margin-top: 24px;
+    margin-bottom: 16px;
 }
 
 .contribution-graph-container {
@@ -395,20 +418,7 @@ ul {
     justify-content: center;
 }
 
-/* Mobile Optimization for Timeline */
-@media (max-width: 767px) {
-    .experience-timeline {
-        padding-left: 0;
-    }
 
-    .experience-timeline::before {
-        display: none;
-    }
-
-    .timeline-marker {
-        display: none;
-    }
-}
 
 /* Responsive - Tablet and Desktop */
 @media (min-width: 768px) {
@@ -512,8 +522,10 @@ ul {
     font-weight: 600;
 }
 
-.readme-content p {
-    margin-bottom: 16px;
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+    /* Offset for fixed header */
 }
 
 .skills-grid {
@@ -587,6 +599,7 @@ ul {
 /* Experience Timeline Redesign */
 .experience-timeline {
     position: relative;
+    padding-left: 30px;
     margin-bottom: 32px;
 }
 
@@ -838,6 +851,11 @@ ul {
     text-decoration: underline;
 }
 
+.github-stats-section {
+    margin-top: 32px;
+    scroll-margin-top: 100px;
+}
+
 .section-title {
     margin-top: 32px;
     margin-bottom: 16px;
@@ -845,4 +863,91 @@ ul {
     font-weight: 600;
     border-bottom: 1px solid var(--color-border-muted);
     padding-bottom: 8px;
+}
+
+/* Mobile Optimization for Timeline */
+@media (max-width: 767px) {
+    .experience-timeline {
+        padding-left: 0;
+    }
+
+    .experience-timeline::before {
+        display: none;
+    }
+
+    .timeline-marker {
+        display: none;
+    }
+
+    .job-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--color-accent-fg);
+    color: #ffffff;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, background-color 0.2s;
+    border: none;
+    font-size: 18px;
+}
+
+.back-to-top:hover {
+    transform: translateY(-2px);
+    background-color: var(--color-text-link);
+}
+
+/* Sticky Contact Sidebar */
+.sticky-contact-sidebar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+    padding-right: 10px;
+}
+
+.contact-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, width 0.2s;
+    text-decoration: none;
+}
+
+.contact-btn:hover {
+    transform: scale(1.1);
+}
+
+.call-btn {
+    background-color: #0969da;
+    /* Blue */
+}
+
+.whatsapp-btn {
+    background-color: #25D366;
+    /* WhatsApp Green */
 }

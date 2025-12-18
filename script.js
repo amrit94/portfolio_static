@@ -125,3 +125,121 @@ function updateElementText(id, text) {
         el.textContent = text;
     }
 }
+
+// Theme Switcher Logic
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeIcon = themeToggleBtn.querySelector('i');
+const htmlElement = document.documentElement;
+
+// Function to set theme
+function setTheme(theme) {
+    if (theme === 'light') {
+        htmlElement.setAttribute('data-theme', 'light');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        localStorage.setItem('theme', 'light');
+        updateStatsTheme('light');
+    } else {
+        htmlElement.setAttribute('data-theme', 'dark');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'dark');
+        updateStatsTheme('dark');
+    }
+}
+
+function updateStatsTheme(theme) {
+    const statsCard = document.querySelector('.gh-stats-card');
+    const streakCard = document.querySelector('.gh-streak-card');
+
+    if (theme === 'light') {
+        if (statsCard) {
+            statsCard.src = 'https://github-readme-stats.vercel.app/api?username=amrit94&show_icons=true&theme=default&hide_border=true&bg_color=ffffff&title_color=24292f&text_color=57606a&icon_color=0969da';
+        }
+        if (streakCard) {
+            streakCard.src = 'https://streak-stats.demolab.com?user=amrit94&theme=default&background=ffffff&border=d0d7de&dates=57606a&currStreakLabel=0969da';
+        }
+    } else {
+        if (statsCard) {
+            statsCard.src = 'https://github-readme-stats.vercel.app/api?username=amrit94&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=c9d1d9&text_color=8b949e&icon_color=58a6ff';
+        }
+        if (streakCard) {
+            streakCard.src = 'https://streak-stats.demolab.com?user=amrit94&theme=dark&background=0d1117&border=30363d&dates=c9d1d9&currStreakLabel=58a6ff';
+        }
+    }
+}
+
+// Check local storage or system preference on load
+const savedTheme = localStorage.getItem('theme');
+
+if (savedTheme === 'light') {
+    setTheme('light');
+} else if (savedTheme === 'dark') {
+    setTheme('dark');
+} else {
+    // Default to dark
+    setTheme('dark');
+}
+
+// Toggle event listener
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+    });
+}
+
+// Back to Top Button Logic
+const backToTopBtn = document.getElementById('back-to-top');
+
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.style.display = 'flex';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Active Navigation Logic (Scroll Spy)
+const sections = document.querySelectorAll('h4.section-title, .github-stats-section');
+const navLinks = document.querySelectorAll('.main-nav ul li a');
+
+// Click handler
+navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+
+// Scroll Spy
+if (sections.length > 0) {
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            // Offset for fixed header (approx 100px)
+            if (window.scrollY >= (sectionTop - 150)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (current && link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    });
+}
