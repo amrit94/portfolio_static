@@ -837,6 +837,12 @@ html {
     border: 1px solid var(--color-border-muted);
 }
 
+.paper-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
 .view-paper-btn {
     display: inline-flex;
     align-items: center;
@@ -849,6 +855,95 @@ html {
 
 .view-paper-btn:hover {
     text-decoration: underline;
+}
+
+/* Featured Projects Section */
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.project-card {
+    border: 1px solid var(--color-border-default);
+    border-radius: 6px;
+    padding: 16px;
+    background-color: var(--color-bg-subtle);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-accent-fg);
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.project-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.project-title a {
+    color: var(--color-accent-fg);
+}
+
+.project-links {
+    display: flex;
+    gap: 12px;
+}
+
+.project-links a {
+    color: var(--color-text-secondary);
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.project-links a:hover {
+    color: var(--color-accent-fg);
+}
+
+.project-desc {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin-bottom: 16px;
+    flex-grow: 1;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.project-tags .tag {
+    font-size: 12px;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-default);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--color-border-muted);
 }
 
 .github-stats-section {
