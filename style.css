@@ -475,6 +475,10 @@ ul {
         justify-content: center;
         gap: 24px;
     }
+
+    .readme-content {
+        padding: 32px;
+    }
 }
 
 /* README Section */
@@ -504,7 +508,7 @@ ul {
 }
 
 .readme-content {
-    padding: 32px;
+    padding: 5px;
 }
 
 .readme-content h3 {
