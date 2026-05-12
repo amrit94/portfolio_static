@@ -1,6 +1,6 @@
+const username = 'amrit94';
 document.addEventListener('DOMContentLoaded', () => {
     const pinnedReposContainer = document.getElementById('pinned-repos');
-    const username = 'amrit94';
     const pinnedApiUrl = `https://pinned.berrysauce.dev/get/${username}`;
     const profileApiUrl = `https://api.github.com/users/${username}`;
 
@@ -29,12 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (navAvatarEl) navAvatarEl.src = data.avatar_url;
 
             // Optional: Company and Blog
-            if (data.company) {
-                const companyEl = document.getElementById('profile-company');
-                const companyWrapper = document.getElementById('profile-company-wrapper');
-                if (companyEl) companyEl.textContent = data.company;
-                if (companyWrapper) companyWrapper.style.display = 'flex';
-            }
+            // if (data.company) {
+            //     const companyEl = document.getElementById('profile-company');
+            //     const companyWrapper = document.getElementById('profile-company-wrapper');
+            //     if (companyEl) companyEl.textContent = data.company;
+            //     if (companyWrapper) companyWrapper.style.display = 'flex';
+            // }
 
             if (data.blog) {
                 const blogEl = document.getElementById('profile-blog');
@@ -189,6 +189,71 @@ if (themeToggleBtn) {
         setTheme(newTheme);
     });
 }
+
+// ── Followers Modal ────────────────────────────────────────────────────────
+(function () {
+    const followersApiUrl = `https://api.github.com/users/${username}/followers?per_page=100`;
+    const modal    = document.getElementById('followers-modal');
+    const list     = document.getElementById('followers-list');
+    const closeBtn = document.getElementById('followers-modal-close');
+    const trigger  = document.getElementById('profile-followers');
+    let   cache    = null;   // store fetched data so we don't re-fetch
+
+    function openModal() {
+        modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        if (!cache) loadFollowers();
+    }
+
+    function closeModal() {
+        modal.classList.remove('is-open');
+        document.body.style.overflow = '';
+    }
+
+    function loadFollowers() {
+        list.innerHTML = '<div class="gh-modal-loading"><i class="fa-solid fa-spinner fa-spin"></i> Loading followers…</div>';
+        fetch(followersApiUrl)
+            .then(r => {
+                if (!r.ok) throw new Error(`GitHub API error ${r.status}`);
+                return r.json();
+            })
+            .then(data => {
+                cache = data;
+                renderFollowers(data);
+            })
+            .catch(err => {
+                console.error('Followers fetch error:', err);
+                list.innerHTML = `<div class="gh-modal-error"><i class="fa-solid fa-triangle-exclamation"></i> Failed to load followers. Try again later.</div>`;
+            });
+    }
+
+    function renderFollowers(data) {
+        if (!data || data.length === 0) {
+            list.innerHTML = '<div class="gh-modal-error">No followers found.</div>';
+            return;
+        }
+        // Update header count
+        const headerEl = document.getElementById('followers-modal-title');
+        if (headerEl) headerEl.innerHTML = `<i class="fa-solid fa-user-group"></i> Followers <span style="font-weight:400;color:var(--color-text-secondary);font-size:13px;">(${data.length})</span>`;
+
+        list.innerHTML = data.map(user => `
+            <a href="${user.html_url}" target="_blank" rel="noopener noreferrer"
+               class="gh-follower-item" aria-label="View ${user.login}'s GitHub profile">
+                <img src="${user.avatar_url}&s=72" alt="${user.login}" class="gh-follower-avatar" loading="lazy">
+                <div class="gh-follower-info">
+                    <span class="gh-follower-login">${user.login}</span>
+                    <span class="gh-follower-meta">github.com/${user.login}</span>
+                </div>
+            </a>
+        `).join('');
+    }
+
+    if (trigger) trigger.addEventListener('click', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (modal)    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+})();
+// ── End Followers Modal ────────────────────────────────────────────────────
 
 // Back to Top Button Logic
 const backToTopBtn = document.getElementById('back-to-top');

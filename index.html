@@ -59,12 +59,12 @@
             </div>
             <a href="#" class="btn btn-block">Download Resume</a>
             <div class="profile-details">
-                <div class="detail-item"><i class="fa-solid fa-user-group"></i> <span id="profile-followers"><b>15</b>
+                <div class="detail-item"><i class="fa-solid fa-user-group"></i> <span id="profile-followers" class="clickable-stat" title="View followers"><b>15</b>
                         followers</span> ·
                     <span id="profile-following"><b>20</b> following</span>
                 </div>
-                <div class="detail-item" id="profile-company-wrapper" style="display:none;"><i
-                        class="fa-regular fa-building"></i> <span id="profile-company"></span></div>
+                <div class="detail-item" id="profile-company-wrapper"><i
+                        class="fa-regular fa-building"></i> <a target='_blank' href='https://rapawalk.com'>Rapawalk</a></div>
                 <div class="detail-item"><i class="fa-solid fa-location-dot"></i> <span
                         id="profile-location">India</span></div>
                 <div class="detail-item"><i class="fa-regular fa-envelope"></i> <a
@@ -216,6 +216,33 @@
 
                     <h4 class="section-title" id="papers">Research Papers</h4>
                     <div class="research-list">
+                        <div class="research-card">
+                            <div class="paper-header">
+                                <h5 class="paper-title"><a
+                                        href="https://www.tandfonline.com/doi/full/10.1080/03772063.2025.2503340">
+                                        Fault Detection Scheme for Negative Control Flipping Faults in Reversible Circuits</a>
+                                </h5>
+                                <span class="paper-year">2025</span>
+                            </div>
+                            <div class="paper-publication">FACTA UNIVERSITATIS</div>
+                            <ul class="paper-highlights">
+                                <li>Investigated the Negative Control Flipping Fault (NCFF) model within the broader scope of reversible circuit testing.</li>
+                                <li>Introduced a novel ATPG-based approach to generate complete test patterns and assessed their effectiveness against traditional missing gate fault models (SMGF, MMGF, PMGF), ensuring 100% fault coverage in lossless computation systems.
+                                </li>
+                            </ul>
+                            <div class="paper-tags">
+                                <span class="tag">Reversible Computing</span>
+                                <span class="tag">Python</span>
+                            </div>
+                            <div class="paper-actions">
+                                <a href="https://doiserbia.nb.rs/Article.aspx?ID=0353-36702601077H"
+                                    class="view-paper-btn">View Paper <i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://ik.imagekit.io/8fh0zzm0gxio/portfolio/FAULT%20DETECTION%20SCHEME%20FOR%20NEGATIVE%20CONTROL.pdf"
+                                    class="view-paper-btn download-btn">Download Paper <i
+                                        class="fa-solid fa-download"></i></a>
+                            </div>
+                        </div>
                         <div class="research-card">
                             <div class="paper-header">
                                 <h5 class="paper-title"><a
@@ -393,6 +420,21 @@
     <button id="back-to-top" class="icon-btn back-to-top" aria-label="Back to top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
+
+    <!-- Followers Modal -->
+    <div id="followers-modal" class="gh-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="followers-modal-title">
+        <div class="gh-modal">
+            <div class="gh-modal-header">
+                <h3 id="followers-modal-title"><i class="fa-solid fa-user-group"></i> Followers</h3>
+                <button class="gh-modal-close" id="followers-modal-close" aria-label="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="gh-modal-body" id="followers-list">
+                <div class="gh-modal-loading"><i class="fa-solid fa-spinner fa-spin"></i> Loading followers…</div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js?v=1.0"></script>
 </body>
